@@ -9,7 +9,7 @@ new_git_repository(
     remote = "https://github.com/apache/arrow.git",
 )
 
-PYBIND11_BAZEL_COMMIT = "311665c4255b70f38e58e9efeb73a9f54637032f"
+PYBIND11_BAZEL_COMMIT = "7f397b5d2cc2434bbd651e096548f7b40c128044"
 http_archive(
   name = "pybind11_bazel",
   strip_prefix = "pybind11_bazel-%s" % PYBIND11_BAZEL_COMMIT,

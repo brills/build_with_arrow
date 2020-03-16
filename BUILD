@@ -5,7 +5,7 @@ pybind_extension(
   srcs = ["my_ext.cc"],
   deps = [
       ":array_util",
-      ":array_wrapper",
+      "@arrow//:arrow",
   ],
 )
 
@@ -16,9 +16,3 @@ cc_library(
   deps = ["@arrow//:arrow"],
 )
 
-cc_library(
-  name = "array_wrapper",
-  srcs = ["array_wrapper.cc"],
-  hdrs = ["array_wrapper.h"],
-  deps = ["@arrow//:arrow"],
-)

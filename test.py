@@ -1,9 +1,9 @@
 import pyarrow as pa
 import my_ext
-import array_wrapper
+import sys
 
-arr = pa.array([1,2,3])
-w_sum = my_ext.GetSum(array_wrapper.ArrayWrapper(arr))
-
-assert pa.Array._import_from_c(w_sum._c_array(), w_sum._c_type()).equals(pa.array([6]))
+s = my_ext.GetSum(pa.array([1,2,3], type=pa.int64()))
+assert s.equals(pa.array([6]))
+assert sys.getrefcount(s) == 2
+print("PASSED")
 
